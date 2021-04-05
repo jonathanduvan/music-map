@@ -1,8 +1,6 @@
+const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const history = require('connect-history-api-fallback');
-const convert = require('koa-connect');
 
 const env = process.env.NODE_ENV || 'development';
 // set to 'production' or 'development' in your env
@@ -16,6 +14,7 @@ module.exports = {
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -40,8 +39,10 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [autoprefixer()],
-              sourceMap: true,
+              postcssOptions: {
+                plugins: () => [autoprefixer()],
+                sourceMap: true,
+              },
             },
           },
           {
@@ -72,21 +73,5 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './200.html',
-    }),
   ],
 };
-
-if (env === 'development') {
-  module.exports.serve = {
-    content: [__dirname],
-    add: (app, middleware, options) => {
-      const historyOptions = {
-        index: '/index.html',
-      };
-      app.use(convert(history(historyOptions)));
-    },
-  };
-}

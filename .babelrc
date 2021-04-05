@@ -1,9 +1,10 @@
 {
     "plugins": ["@babel/plugin-proposal-class-properties"],
     "presets": [
-    ["@babel/react"],
+      ["@babel/react"],
       ["@babel/preset-env", {
         "targets": "> 0.25%, not dead"
       }]
     ]
-}
+  }
+  

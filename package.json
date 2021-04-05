@@ -1,19 +1,22 @@
 {
   "name": "starterpack",
   "version": "1.0.0",
-  "description": "Starterpack for JavaScript Projects",
-  "main": "src/index.js",
-  "author": "Jon Duvan Gonzalez",
+  "description": "Frontend JavaScript Framework",
+  "main": "index.js",
+  "repository": "https://github.com/jonathanduvan/react-starterpack.git",
+  "author": "Jon Gonzalez",
   "license": "MIT",
-  "start": "NODE_ENV=development webpack-dev-server",
+  "scripts": {
+    "start": "NODE_ENV=development webpack serve"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
+    "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
-    "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^5.2.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -23,7 +26,7 @@
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
-    "koa-connect": "^2.1.0",
+    "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^11.0.1",
@@ -34,12 +37,15 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "immutable": "^4.0.0-rc.12",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8",
+    "postcss-loader": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
