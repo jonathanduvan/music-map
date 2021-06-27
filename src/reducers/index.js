@@ -2,10 +2,14 @@
 // this defines what your store state will look like
 import { combineReducers } from 'redux';
 
-import CountReducer from './count-reducer';
+import ExpireTimeReducer from './expire-time-reducer';
+import ArtistReducer from './artists';
+import AlbumReducer from './albums';
 
 const rootReducer = combineReducers({
-  count: CountReducer,
+  expireTime: ExpireTimeReducer,
+  artist: ArtistReducer,
+  album: AlbumReducer,
 });
 
 export default rootReducer;
